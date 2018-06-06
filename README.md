@@ -1,7 +1,14 @@
-# count-down-timer
-## jQuery extend 倒數計時器插件
+# RWD圖片輪播插件 RWD Image slider
+## 可拖曳、點擊切換、自訂寬高比例，自訂按鈕顏色，使用jquery.
 
-live demo https://hsimao.github.io/jquery-count-down-timer
+live demo https://hsimao.github.io/slider-image-jq/
+
+### 使用方式1 - 引入插件CSS
+    <link rel="stylesheet" href="./css/style.css">
+### 使用方式2 - 引入jQuery
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+### 使用方式3 - 引入插件js
+    <script src="./js/js.js"></script>
 
 ### 基礎設置
     $('.slider')._slider('')
