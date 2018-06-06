@@ -201,14 +201,3 @@ $.fn.extend({
 
     }
 })
-
-$(function(){
-    $('.slider')._slider({
-        duration: 4000,
-        // color: 'yellow',   //自訂顏色
-        aspectRatio: '9/18',  //比例設定
-        //height: '250px',      //自訂高度
-        // maxWidth: '900px', //自訂最大寬度
-        isShadow: true        //顯示陰影
-    })
-})
