@@ -1,0 +1,177 @@
+// $color
+$color-primary: #8e44ad
+$color-primary-light: #9b59b6
+$color-secondary: #477158
+$color-white: #ecf0f1
+$color-gray: #7f8c8d
+$color-black: #2c3e50
+
+// $mixin
+@mixin clearfix
+    &:before,&:after
+        content: ''
+        display: table
+    &:after
+        clear: both
+
+@mixin center
+    position: absolute
+    left: 50%
+    top: 50%
+    transform: translate(-50%,-50%)
+
+*
+    box-sizing: border-box
+
+body
+    margin: 0
+    padding: 0
+
+
+//========
+.slider
+    position: relative
+    width: 100%
+    max-width: 1140px
+    margin: 0 auto
+    margin-top: 150px
+    overflow: hidden
+    &:before
+        content: ''
+        position: absolute
+        top: 0
+        left: 0
+        width: 100%
+        height: 100%
+        background-color: black
+        transition: all .3s
+        opacity: 0
+
+    &-tool
+    &-prev,&-next
+        position: absolute
+        top: 0
+        width: 50%
+        height: 100%
+        cursor: pointer
+    &-prev
+        left: 0
+    &-next
+        right: 0
+    &-prev-icon,&-prev-bg,&-next-icon,&-next-bg
+        position: absolute
+        top: 50%
+        transform: translateY(-50%)
+        transition: all .3s
+    &-prev-icon,&-next-icon
+        border-top: 8px solid transparent
+        border-bottom: 8px solid transparent
+        pointer-events: none
+    &-prev-icon
+        left: -132px
+        border-right: 12px solid $color-primary
+    &-next-icon
+        right: -132px
+        border-left: 12px solid $color-primary
+    &-prev-bg,&-next-bg
+        width: 40px
+        height: 40px
+        border-radius: 50%
+        background-color: $color-white
+        opacity: 0.7
+        &:hover
+            opacity: 1
+    &-prev-bg
+        left: -120px
+    &-next-bg
+        right: -120px
+    &-prev:hover
+        .slider-prev-icon
+            left: 32px
+        .slider-prev-bg
+            left: 20px
+    &-next:hover
+        .slider-next-icon
+            right: 32px
+        .slider-next-bg
+            right: 20px
+
+
+    &-btn
+        position: absolute
+        bottom: 0
+        left: 50%
+        transform: translateX(-50%)
+        width: 33.333%
+        height: 30px
+        line-height: 30px
+        text-align: center
+        z-index: 10
+        .btn
+            position: relative
+            display: inline-block
+            width: 40px
+            height: 30px
+            transition: all .3s
+            &:hover
+                background-color: rgba($color-white,0.6)
+        .btn-bg
+            position: relative
+            +center
+            width: 30px
+            height: 3px
+            background-color: $color-primary
+            overflow: hidden
+            &:before
+                content: ''
+                background-color: #fff
+                position: absolute
+                top: 0
+                left: 0
+                width: 100%
+                height: 100%
+
+    &-box
+        display: block
+        width: 100%
+        +clearfix
+    &-item
+        display: inline-block
+        width: 20%
+        height: 100%
+        float: left
+        transition: all .6s linear
+        top: 0
+    &-link
+        position: relative
+        display: block
+        width: 100%
+        height: 0
+        padding-top: calc(100% * (9 / 16)) //16比9的框 => 56.25%
+    &-img
+        +center
+        // max-height: 100% //依圖片的完整寬度呈現
+        max-width: 100% //依圖片的完整寬度呈現
+
+    &-des
+        position: absolute
+        bottom: 20px
+        padding: 0
+        margin: 0
+        z-index: 10
+        background-color: $color-primary
+
+
+.slider.shadow
+    box-shadow: 0 20px 40px 0 rgba(black,0.125)
+
+.slider.active
+    &:before
+        opacity: 0.3
+
+.btn-bg.active:before
+    animation: active .3s linear both
+
+@keyframes active
+    100%
+        left: 30px
