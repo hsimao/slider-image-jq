@@ -2,5 +2,5 @@
 .vscode
 node_modules
 package-lock.json
-style.prefix.css
-style.comp.css
+css/style.prefix.css
+css/style.comp.css
