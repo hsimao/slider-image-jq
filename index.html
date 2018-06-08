@@ -8,31 +8,31 @@
     <title>RWD圖片輪播插件 RWD Image slider</title>
 </head>
 <body>
-    <div class="slider">
-        <div class="slider-box">
-            <div class="slider-item">
-                <a href="#" class="slider-link">
-                    <img class="slider-img" src="https://images.pexels.com/photos/1095826/pexels-photo-1095826.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260" alt="">
+    <div class="u-slider" id="slider">
+        <div class="u-slider-box">
+            <div class="u-slider-item">
+                <a href="#" class="u-slider-link">
+                    <img class="u-slider-img" src="https://images.pexels.com/photos/1095826/pexels-photo-1095826.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260" alt="">
                 </a>
             </div>
-            <div class="slider-item active">
-                <a href="#" class="slider-link">
-                    <img class="slider-img" src="https://images.pexels.com/photos/895228/pexels-photo-895228.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260" alt="">
+            <div class="u-slider-item active">
+                <a href="#" class="u-slider-link">
+                    <img class="u-slider-img" src="https://images.pexels.com/photos/895228/pexels-photo-895228.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260" alt="">
                 </a>
             </div>
-            <div class="slider-item">
-                <a href="#" class="slider-link">
-                    <img class="slider-img" src="https://images.pexels.com/photos/834894/pexels-photo-834894.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260" alt="">
+            <div class="u-slider-item">
+                <a href="#" class="u-slider-link">
+                    <img class="u-slider-img" src="https://images.pexels.com/photos/834894/pexels-photo-834894.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260" alt="">
                 </a>
             </div>
-            <div class="slider-item">
-                <a href="#" class="slider-link">
-                    <img class="slider-img" src="https://images.pexels.com/photos/847483/pexels-photo-847483.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260" alt="">
+            <div class="u-slider-item">
+                <a href="#" class="u-slider-link">
+                    <img class="u-slider-img" src="https://images.pexels.com/photos/847483/pexels-photo-847483.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260" alt="">
                 </a>
             </div>
-            <div class="slider-item">
-                <a href="#" class="slider-link">
-                    <img class="slider-img" src="https://images.pexels.com/photos/918441/pexels-photo-918441.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260" alt="">
+            <div class="u-slider-item">
+                <a href="#" class="u-slider-link">
+                    <img class="u-slider-img" src="https://images.pexels.com/photos/918441/pexels-photo-918441.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260" alt="">
                 </a>
             </div>
         </div>
@@ -42,15 +42,20 @@
     <script src="./js/js.js"></script>
 
     <script>
-        $(function(){
-            $('.slider')._slider({
-                duration: 4000,
-                // color: 'yellow',   //自訂顏色
-                aspectRatio: '3/9',  //比例設定
-                //height: '250px',      //自訂高度
-                isShadow: true        //顯示陰影
-            })
+    $(function(){
+        $('#slider')._slider({
+            duration: 4000,
+            aspectRatio: '27.08%',  //比例設定, 16比6 => 56.25%, 4比3 => 75%
+            // height: '250px',  //自訂高度
+            maxWidth: '100%',   //自訂最大寬度
+            isShadow: true,    //顯示陰影
+            // color: 'yellow'
         })
+        // 比例換算說明
+        // 高 / 寬 * 100
+        // 600px / 1000px * 100 => 60 => 設置60%
+    })
+
     </script>
 </body>
 </html>

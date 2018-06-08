@@ -29,10 +29,10 @@ body
 
 
 //========
-.slider
+.u-slider
     position: relative
     width: 100%
-    // max-width: 1140px
+    max-width: 1140px
     margin: 0 auto
     overflow: hidden
     &:before
@@ -43,8 +43,10 @@ body
         width: 100%
         height: 100%
         background-color: black
+        background-color: inherit
         transition: all .3s
         opacity: 0
+        pointer-events: none
 
     &-tool
     &-prev,&-next
@@ -85,14 +87,14 @@ body
     &-next-bg
         right: -120px
     &-prev:hover
-        .slider-prev-icon
+        .u-slider-prev-icon
             left: 32px
-        .slider-prev-bg
+        .u-slider-prev-bg
             left: 20px
     &-next:hover
-        .slider-next-icon
+        .u-slider-next-icon
             right: 32px
-        .slider-next-bg
+        .u-slider-next-bg
             right: 20px
 
 
@@ -101,12 +103,12 @@ body
         bottom: 0
         left: 50%
         transform: translateX(-50%)
-        width: 33.333%
+        width: 100%
         height: 30px
         line-height: 30px
         text-align: center
         z-index: 10
-        .btn
+        .u-btn
             position: relative
             display: inline-block
             width: 40px
@@ -114,13 +116,14 @@ body
             transition: all .3s
             &:hover
                 background-color: rgba($color-white,0.6)
-        .btn-bg
+        .u-btn-bg
             position: relative
             +center
             width: 30px
             height: 3px
             background-color: $color-primary
             overflow: hidden
+            pointer-events: none
             &:before
                 content: ''
                 background-color: #fff
@@ -151,6 +154,7 @@ body
         +center
         // max-height: 100% //依圖片的完整寬度呈現
         max-width: 100% //依圖片的完整寬度呈現
+        transition: all 1s
 
     &-des
         position: absolute
@@ -161,16 +165,28 @@ body
         background-color: $color-primary
 
 
-.slider.shadow
+.u-slider.shadow
     box-shadow: 0 20px 40px 0 rgba(black,0.125)
 
-.slider.active
+.u-slider.active
     &:before
-        opacity: 0.3
+        opacity: 0.15
+        z-index: 1
 
-.btn-bg.active:before
+.u-btn-bg.active:before
     animation: active .3s linear both
 
 @keyframes active
     100%
         left: 30px
+
+
+.u-slider-img.before
+    opacity: .7
+
+.u-slider-img.active
+    opacity: 1
+
+.u-slider-img.after
+    opacity: .7
+
